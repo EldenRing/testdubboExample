@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: myTest-app
+embedded:
+  zookeeper:
+    port: 12181
+dubbo:
+  scan:
+    base-packages: mytest.testapp.serviceImpl
+#  metadata-report:
+#    address: zookeeper://127.0.0.1:${embedded.zookeeper.port}
+  registry:
+    address: zookeeper://127.0.0.1:${embedded.zookeeper.port}
+  protocol:
+    name: dubbo
+    port: 30355
+  monitor:
+    address: zookeeper://127.0.0.1:${embedded.zookeeper.port}
+
